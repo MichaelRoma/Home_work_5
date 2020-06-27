@@ -10,12 +10,17 @@ import UIKit
 import Kingfisher
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var imageAvatar: UIImageView!
+    
+    let url = URL(string: "https://github.com/MichaelRoma/githubLogo/raw/master/githubLogo.png")
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        imageAvatar.kf.setImage(with: url)
     }
-
-
+    @IBAction func pressLogin(_ sender: Any) {
+        print("You press Login")
+    }
+    
+    
 }
 
