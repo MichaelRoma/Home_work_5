@@ -18,9 +18,7 @@ class ViewController: UIViewController {
         imageAvatar.kf.setImage(with: url)
     }
     @IBAction func pressLogin(_ sender: Any) {
-        print("You press Login")
+        navigationController?.pushViewController(SearchGitHubViewController(), animated: true)
     }
-    
-    
 }
 
