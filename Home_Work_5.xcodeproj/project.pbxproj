@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		4CFC9BA624A75CAC007C7C10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA424A75CAC007C7C10 /* Main.storyboard */; };
 		4CFC9BA824A75CAD007C7C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA724A75CAD007C7C10 /* Assets.xcassets */; };
 		4CFC9BAB24A75CAD007C7C10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA924A75CAD007C7C10 /* LaunchScreen.storyboard */; };
+		4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BB424A76E82007C7C10 /* SearchGitHubViewController.swift */; };
+		4CFC9BB724A76E82007C7C10 /* SearchGitHubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */; };
 		E7ABA82D2A2522F3040E6297 /* Pods_Home_Work_5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D55DF2659456FEBA6628D /* Pods_Home_Work_5.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		4CFC9BA724A75CAD007C7C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CFC9BAA24A75CAD007C7C10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CFC9BAC24A75CAD007C7C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFC9BB424A76E82007C7C10 /* SearchGitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGitHubViewController.swift; sourceTree = "<group>"; };
+		4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchGitHubViewController.xib; sourceTree = "<group>"; };
 		505DA74A4CDA0E90D74599CB /* Pods-Home_Work_5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home_Work_5.release.xcconfig"; path = "Target Support Files/Pods-Home_Work_5/Pods-Home_Work_5.release.xcconfig"; sourceTree = "<group>"; };
 		60DD99EE35190A929ABF8CAA /* Pods-Home_Work_5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home_Work_5.debug.xcconfig"; path = "Target Support Files/Pods-Home_Work_5/Pods-Home_Work_5.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6D55DF2659456FEBA6628D /* Pods_Home_Work_5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_Work_5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +52,6 @@
 				60DD99EE35190A929ABF8CAA /* Pods-Home_Work_5.debug.xcconfig */,
 				505DA74A4CDA0E90D74599CB /* Pods-Home_Work_5.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +76,33 @@
 		4CFC9B9D24A75CAC007C7C10 /* Home_Work_5 */ = {
 			isa = PBXGroup;
 			children = (
-				4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */,
-				4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */,
 				4CFC9BA224A75CAC007C7C10 /* ViewController.swift */,
 				4CFC9BA424A75CAC007C7C10 /* Main.storyboard */,
-				4CFC9BA724A75CAD007C7C10 /* Assets.xcassets */,
-				4CFC9BA924A75CAD007C7C10 /* LaunchScreen.storyboard */,
+				4CFC9BB924A7AF37007C7C10 /* SearchViewController */,
+				4CFC9BB824A7AF17007C7C10 /* Resource */,
 				4CFC9BAC24A75CAD007C7C10 /* Info.plist */,
 			);
 			path = Home_Work_5;
+			sourceTree = "<group>";
+		};
+		4CFC9BB824A7AF17007C7C10 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC9BA724A75CAD007C7C10 /* Assets.xcassets */,
+				4CFC9BA924A75CAD007C7C10 /* LaunchScreen.storyboard */,
+				4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */,
+				4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4CFC9BB924A7AF37007C7C10 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC9BB424A76E82007C7C10 /* SearchGitHubViewController.swift */,
+				4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */,
+			);
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		6E25A55151C04537A54F51B7 /* Frameworks */ = {
@@ -155,6 +176,7 @@
 				4CFC9BAB24A75CAD007C7C10 /* LaunchScreen.storyboard in Resources */,
 				4CFC9BA824A75CAD007C7C10 /* Assets.xcassets in Resources */,
 				4CFC9BA624A75CAC007C7C10 /* Main.storyboard in Resources */,
+				4CFC9BB724A76E82007C7C10 /* SearchGitHubViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +232,7 @@
 				4CFC9BA324A75CAC007C7C10 /* ViewController.swift in Sources */,
 				4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */,
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,
+				4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
