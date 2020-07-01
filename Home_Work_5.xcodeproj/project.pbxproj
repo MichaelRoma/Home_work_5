@@ -15,6 +15,12 @@
 		4CFC9BAB24A75CAD007C7C10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA924A75CAD007C7C10 /* LaunchScreen.storyboard */; };
 		4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BB424A76E82007C7C10 /* SearchGitHubViewController.swift */; };
 		4CFC9BB724A76E82007C7C10 /* SearchGitHubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */; };
+		4CFC9BBD24A899FD007C7C10 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BBC24A899FD007C7C10 /* JsonModel.swift */; };
+		4CFC9BD024AB7D43007C7C10 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */; };
+		4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */; };
+		4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD724AC431E007C7C10 /* Cell.swift */; };
+		4CFC9BDA24AC431E007C7C10 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD824AC431E007C7C10 /* Cell.xib */; };
+		4CFC9BDC24AC8743007C7C10 /* LoadViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */; };
 		E7ABA82D2A2522F3040E6297 /* Pods_Home_Work_5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D55DF2659456FEBA6628D /* Pods_Home_Work_5.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,12 @@
 		4CFC9BAC24A75CAD007C7C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CFC9BB424A76E82007C7C10 /* SearchGitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGitHubViewController.swift; sourceTree = "<group>"; };
 		4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchGitHubViewController.xib; sourceTree = "<group>"; };
+		4CFC9BBC24A899FD007C7C10 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
+		4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		4CFC9BD724AC431E007C7C10 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		4CFC9BD824AC431E007C7C10 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewExtension.swift; sourceTree = "<group>"; };
 		505DA74A4CDA0E90D74599CB /* Pods-Home_Work_5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home_Work_5.release.xcconfig"; path = "Target Support Files/Pods-Home_Work_5/Pods-Home_Work_5.release.xcconfig"; sourceTree = "<group>"; };
 		60DD99EE35190A929ABF8CAA /* Pods-Home_Work_5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home_Work_5.debug.xcconfig"; path = "Target Support Files/Pods-Home_Work_5/Pods-Home_Work_5.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6D55DF2659456FEBA6628D /* Pods_Home_Work_5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_Work_5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +91,10 @@
 				4CFC9BA224A75CAC007C7C10 /* ViewController.swift */,
 				4CFC9BA424A75CAC007C7C10 /* Main.storyboard */,
 				4CFC9BB924A7AF37007C7C10 /* SearchViewController */,
-				4CFC9BB824A7AF17007C7C10 /* Resource */,
 				4CFC9BAC24A75CAD007C7C10 /* Info.plist */,
+				4CFC9BBC24A899FD007C7C10 /* JsonModel.swift */,
+				4CFC9BCE24AB79BF007C7C10 /* ResultViewController */,
+				4CFC9BB824A7AF17007C7C10 /* Resource */,
 			);
 			path = Home_Work_5;
 			sourceTree = "<group>";
@@ -92,6 +106,7 @@
 				4CFC9BA924A75CAD007C7C10 /* LaunchScreen.storyboard */,
 				4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */,
 				4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */,
+				4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -103,6 +118,17 @@
 				4CFC9BB524A76E82007C7C10 /* SearchGitHubViewController.xib */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		4CFC9BCE24AB79BF007C7C10 /* ResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */,
+				4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */,
+				4CFC9BD724AC431E007C7C10 /* Cell.swift */,
+				4CFC9BD824AC431E007C7C10 /* Cell.xib */,
+			);
+			path = ResultViewController;
 			sourceTree = "<group>";
 		};
 		6E25A55151C04537A54F51B7 /* Frameworks */ = {
@@ -174,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFC9BAB24A75CAD007C7C10 /* LaunchScreen.storyboard in Resources */,
+				4CFC9BDA24AC431E007C7C10 /* Cell.xib in Resources */,
 				4CFC9BA824A75CAD007C7C10 /* Assets.xcassets in Resources */,
 				4CFC9BA624A75CAC007C7C10 /* Main.storyboard in Resources */,
 				4CFC9BB724A76E82007C7C10 /* SearchGitHubViewController.xib in Resources */,
@@ -229,10 +256,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFC9BBD24A899FD007C7C10 /* JsonModel.swift in Sources */,
 				4CFC9BA324A75CAC007C7C10 /* ViewController.swift in Sources */,
 				4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */,
+				4CFC9BDC24AC8743007C7C10 /* LoadViewExtension.swift in Sources */,
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,
+				4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */,
+				4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */,
 				4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */,
+				4CFC9BD024AB7D43007C7C10 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

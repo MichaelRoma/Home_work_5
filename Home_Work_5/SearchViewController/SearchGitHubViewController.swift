@@ -80,6 +80,7 @@ class SearchGitHubViewController: UIViewController {
             return
         }
         
+        self.startWaiting()
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -90,12 +91,20 @@ class SearchGitHubViewController: UIViewController {
                 print("no data received")
                 return
             }
-            
-            guard let text = String(data: data, encoding: .utf8) else {
-                print("data encoding failed")
-                return
+
+            let decoder = JSONDecoder()
+            do {
+                let model = try decoder.decode(JsonModel.self, from: data)
+                DispatchQueue.main.async {
+                    self.stopWaiting()
+                    let pushView = ResultTableViewController()
+                    pushView.model = model
+                    self.navigationController?.pushViewController(pushView, animated: true)
+                }
+            } catch let error {
+                self.stopWaiting()
+                print(error.localizedDescription)
             }
-            print("received data: \(text)")
         }
         dataTask.resume()
     }
