@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchGitHubViewController" customModule="Home_Work_5" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImage" destination="rS7-Rp-O9r" id="zhG-X0-cPF"/>
+                <outlet property="greatings" destination="aez-kk-ggT" id="jqy-Sl-Ur2"/>
                 <outlet property="language" destination="GiG-RL-ZOI" id="u8f-gp-gTZ"/>
                 <outlet property="order" destination="nYF-5v-Qky" id="XtP-rN-h9A"/>
                 <outlet property="repositoryName" destination="uKH-4i-WSV" id="92g-gl-cLv"/>

@@ -12,6 +12,7 @@ struct JsonModel: Decodable {
     struct Items: Decodable {
         let name: String
         let description: String
+        let html_url: String
         let owner: Owner
     }
     struct Owner: Decodable {

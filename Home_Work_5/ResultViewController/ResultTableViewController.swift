@@ -19,7 +19,6 @@ class ResultTableViewController: UITableViewController {
     
     private func configurator() {
         tableView.register(UINib.init(nibName: cell, bundle: nil), forCellReuseIdentifier: cell)
-        tableView.allowsSelection = false
         tableView.rowHeight = CGFloat(100)
         tableView.sectionHeaderHeight = CGFloat(60)
     }
@@ -40,5 +39,12 @@ class ResultTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
         cell.cellConfigurator(with: model.items[indexPath.row])
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let url = URL(string: model.items[indexPath.row].html_url) else { return }
+        let pushView = WebView()
+        pushView.myUrl = url
+        navigationController?.pushViewController(pushView, animated: true)
     }
 }

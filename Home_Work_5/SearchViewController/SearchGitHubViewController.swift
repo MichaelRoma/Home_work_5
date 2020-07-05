@@ -14,10 +14,18 @@ class SearchGitHubViewController: UIViewController {
     @IBOutlet weak var language: UITextField!
     @IBOutlet weak var repositoryName: UITextField!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var greatings: UILabel!
+    
+    var url = URL(string: "")
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
+        if !(url?.path.isEmpty)! {
+            avatarImage.kf.setImage(with: url)
+            greatings.text = "Hello \(name)"
+        }
     }
     
     @IBAction func startSearch(_ sender: Any) {
@@ -42,7 +50,7 @@ class SearchGitHubViewController: UIViewController {
     
     private func configurPlaceholderForImageView() {
         avatarImage.image = #imageLiteral(resourceName: "avatar-placeholder")
-        avatarImage.layer.cornerRadius = (view.frame.width * 0.3) / 2
+        avatarImage.layer.cornerRadius = (view.frame.width * 0.3) / 2.2
     }
     
     func searchRepositoriesRequest(_ name: String, _ language: String, _ order: String) -> URLRequest? {

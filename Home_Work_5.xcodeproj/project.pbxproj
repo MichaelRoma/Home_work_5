@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CEDF5F524AE44150039FF60 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDF5F424AE44150039FF60 /* WebView.swift */; };
 		4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */; };
 		4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */; };
 		4CFC9BA324A75CAC007C7C10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA224A75CAC007C7C10 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CEDF5F424AE44150039FF60 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4CFC9B9B24A75CAC007C7C10 /* Home_Work_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home_Work_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4CEDF5EF24AE3C880039FF60 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				4CEDF5F424AE44150039FF60 /* WebView.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
 		4CFC9B9224A75CAB007C7C10 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		4CFC9B9D24A75CAC007C7C10 /* Home_Work_5 */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDF5EF24AE3C880039FF60 /* WKWebView */,
 				4CFC9BA224A75CAC007C7C10 /* ViewController.swift */,
 				4CFC9BA424A75CAC007C7C10 /* Main.storyboard */,
 				4CFC9BB924A7AF37007C7C10 /* SearchViewController */,
@@ -263,6 +274,7 @@
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,
 				4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */,
 				4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */,
+				4CEDF5F524AE44150039FF60 /* WebView.swift in Sources */,
 				4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */,
 				4CFC9BD024AB7D43007C7C10 /* ResultViewController.swift in Sources */,
 			);
