@@ -15,13 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    let a = KeyChainModel()
+    let keyChain = KeyChainModel()
     
     
     let url = URL(string: "https://github.com/MichaelRoma/githubLogo/raw/master/githubLogo.png")
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAvatar.kf.setImage(with: url)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if keyChain.readAllItems() != nil{
+            authenticateUser()
+        }
     }
     
     @IBAction func pressLogin(_ sender: Any) {
@@ -34,22 +41,10 @@ class ViewController: UIViewController {
             print("No password, please type it")
             return
         }
-       // a.savePassword(password: password, account: username)
-      //  authenticateUser()
-         getUserInformation()
+        getUserInformation(username, password)
     }
     
-    func getUserInformation() {
-        
-        guard let username = username.text else {
-            print("No username, please type it")
-            return
-        }
-        
-        guard let password = password.text else {
-            print("No password, please type it")
-            return
-        }
+    func getUserInformation(_ username: String, _ password: String) {
         
         guard let myUrl = URL(string: "https://api.github.com/user") else { return }
         var myRequest = URLRequest(url: myUrl)
@@ -65,8 +60,13 @@ class ViewController: UIViewController {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-                      print("http status code: \(httpResponse.statusCode)")
-                  }
+                print("http status code: \(httpResponse.statusCode)")
+                if httpResponse.statusCode == 200 {
+                    //Так как всегда должен быть только один пользователь и если нажать отмена биометрической аунтификации. ТО можно будет ввести данные нового пользователя, соответственно данные старого необходимо удалить.
+                    _ = self.keyChain.deletePassword()
+                    _ = self.keyChain.savePassword(password: password, account: username)
+                }
+            }
             guard let data = data else {
                 print("no data received")
                 return
@@ -74,8 +74,7 @@ class ViewController: UIViewController {
             
             let decoder = JSONDecoder()
             do {
-                let model = try decoder.decode(JsonModel.Owner.self
-                    , from: data)
+                let model = try decoder.decode(JsonModel.Owner.self, from: data)
                 print(model)
                 guard let url = URL(string: model.avatar_url) else { return }
                 print(url)
@@ -88,9 +87,10 @@ class ViewController: UIViewController {
             } catch let error {
                 print(error.localizedDescription)
                 
-                let alert = UIAlertController(title: "Attension", message: "You using two-factor authentication. This app cant handl it. So, or turn it off, or close this app", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                
                 DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Attension", message: "You dont have access to GitHub. Try AGAIN", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true)
                 }
             }
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
 // MARK: User authenticate
 extension ViewController {
     
-    func authenticateUser() {
+    private func authenticateUser() {
         
         if #available(iOS 8.0, *, *) {
             let authenticationContext = LAContext()
@@ -114,12 +114,15 @@ extension ViewController {
                 authenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
                     [unowned self] success, evaluateError in
                     if success {
-                        // Пользователь успешно прошел аутентификацию
-                        
-                        self.startMainApplicationFlow()
+                        guard let userData = self.keyChain.readAllItems() else {
+                            return
+                        }
+                        //В задании было указано, что удобней пользоваться JSON, но так как по задумке у нас всегда должена быть одна пара логин/пароль. я думаю вариант ниже удоюней
+                        for (username, password) in userData {
+                            print(username)
+                            self.getUserInformation(username, password)}
                     } else {
                         // Пользователь не прошел аутентификацию
-                        
                         if let error = evaluateError {
                             print(error.localizedDescription)
                         }
@@ -127,7 +130,6 @@ extension ViewController {
                 }
             } else {
                 // Не удалось выполнить проверку на использование биометрических данных или пароля для аутентификации
-                
                 if let error = authError {
                     print(error.localizedDescription)
                 }
@@ -137,10 +139,7 @@ extension ViewController {
         }
     }
     
-    func startMainApplicationFlow() {
-        print("Main application flow started")
-    }
-    func setupAuthenticationContext(context: LAContext) {
+    private  func setupAuthenticationContext(context: LAContext) {
         context.localizedReason = "Use for fast and safe authentication in your app"
         context.localizedCancelTitle = "Cancel"
         context.localizedFallbackTitle = "Enter password"
