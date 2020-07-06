@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C22260824B2F7D500302E1D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22260724B2F7D500302E1D /* Keychain.swift */; };
 		4CEDF5F524AE44150039FF60 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDF5F424AE44150039FF60 /* WebView.swift */; };
 		4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */; };
 		4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C22260724B2F7D500302E1D /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		4CEDF5F424AE44150039FF60 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4CFC9B9B24A75CAC007C7C10 /* Home_Work_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home_Work_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4C22260624B2F7BF00302E1D /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				4C22260724B2F7D500302E1D /* Keychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		4CEDF5EF24AE3C880039FF60 /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 			children = (
 				4CEDF5EF24AE3C880039FF60 /* WKWebView */,
 				4CFC9BA224A75CAC007C7C10 /* ViewController.swift */,
+				4C22260624B2F7BF00302E1D /* Keychain */,
 				4CFC9BA424A75CAC007C7C10 /* Main.storyboard */,
 				4CFC9BB924A7AF37007C7C10 /* SearchViewController */,
 				4CFC9BAC24A75CAD007C7C10 /* Info.plist */,
@@ -272,6 +283,7 @@
 				4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */,
 				4CFC9BDC24AC8743007C7C10 /* LoadViewExtension.swift in Sources */,
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,
+				4C22260824B2F7D500302E1D /* Keychain.swift in Sources */,
 				4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */,
 				4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */,
 				4CEDF5F524AE44150039FF60 /* WebView.swift in Sources */,
