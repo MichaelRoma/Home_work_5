@@ -22,6 +22,7 @@ class SearchGitHubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
+        keyboardDismis()
         if !(url?.path.isEmpty)! {
             avatarImage.kf.setImage(with: url)
             greatings.text = "Hello \(name)"
@@ -89,7 +90,7 @@ class SearchGitHubViewController: UIViewController {
         }
         
         self.startWaiting()
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+        NetworkManager.task(url: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -114,6 +115,9 @@ class SearchGitHubViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        dataTask.resume()
     }
+    private func keyboardDismis() {
+               let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+                      view.addGestureRecognizer(tap)
+           }
 }

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAvatar.kf.setImage(with: url)
+        keyboardDismis()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,6 +97,10 @@ class ViewController: UIViewController {
             }
         }.resume()
     }
+    private func keyboardDismis() {
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+                   view.addGestureRecognizer(tap)
+        }
 }
 
 // MARK: User authenticate
