@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C90000724B5F24F00C82D9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90000624B5F24F00C82D9B /* NetworkManager.swift */; };
 		4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */; };
 		4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */; };
 		4CFC9BA324A75CAC007C7C10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BA224A75CAC007C7C10 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C90000624B5F24F00C82D9B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4CFC9B9B24A75CAC007C7C10 /* Home_Work_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home_Work_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				4CFC9B9E24A75CAC007C7C10 /* AppDelegate.swift */,
 				4CFC9BA024A75CAC007C7C10 /* SceneDelegate.swift */,
 				4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */,
+				4C90000624B5F24F00C82D9B /* NetworkManager.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				4CFC9BBD24A899FD007C7C10 /* JsonModel.swift in Sources */,
 				4CFC9BA324A75CAC007C7C10 /* ViewController.swift in Sources */,
+				4C90000724B5F24F00C82D9B /* NetworkManager.swift in Sources */,
 				4CFC9B9F24A75CAC007C7C10 /* AppDelegate.swift in Sources */,
 				4CFC9BDC24AC8743007C7C10 /* LoadViewExtension.swift in Sources */,
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,

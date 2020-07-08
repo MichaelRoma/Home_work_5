@@ -18,6 +18,7 @@ class SearchGitHubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
+        keyboardDismis()
     }
     
     @IBAction func startSearch(_ sender: Any) {
@@ -37,7 +38,6 @@ class SearchGitHubViewController: UIViewController {
         }
         
         performSearchRepoRequest(searchRepositoriesRequest(repositoryName, language, order))
-        
     }
     
     private func configurPlaceholderForImageView() {
@@ -81,7 +81,7 @@ class SearchGitHubViewController: UIViewController {
         }
         
         self.startWaiting()
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+        NetworkManager.task(url: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -106,6 +106,9 @@ class SearchGitHubViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        dataTask.resume()
     }
+    private func keyboardDismis() {
+         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+         view.addGestureRecognizer(tap)
+     }
 }
