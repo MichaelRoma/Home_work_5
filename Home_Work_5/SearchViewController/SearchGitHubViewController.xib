@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchGitHubViewController" customModule="Home_Work_5" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImage" destination="rS7-Rp-O9r" id="zhG-X0-cPF"/>
+                <outlet property="greatings" destination="aez-kk-ggT" id="jqy-Sl-Ur2"/>
                 <outlet property="language" destination="GiG-RL-ZOI" id="u8f-gp-gTZ"/>
                 <outlet property="order" destination="nYF-5v-Qky" id="XtP-rN-h9A"/>
                 <outlet property="repositoryName" destination="uKH-4i-WSV" id="92g-gl-cLv"/>
@@ -43,12 +44,12 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-Jj-0fK">
                             <rect key="frame" x="0.0" y="57" width="331" height="78"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repository name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKH-4i-WSV" userLabel="repository name">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repository name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uKH-4i-WSV" userLabel="repository name">
                                     <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-RL-ZOI" userLabel="language">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="language" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-RL-ZOI" userLabel="language">
                                     <rect key="frame" x="0.0" y="44" width="331" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>

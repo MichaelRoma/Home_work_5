@@ -5,7 +5,6 @@
 //  Created by Mykhailo Romanovskyi on 27.06.2020.
 //  Copyright © 2020 Mykhailo Romanovskyi. All rights reserved.
 //
-
 import UIKit
 
 class SearchGitHubViewController: UIViewController {
@@ -14,10 +13,19 @@ class SearchGitHubViewController: UIViewController {
     @IBOutlet weak var language: UITextField!
     @IBOutlet weak var repositoryName: UITextField!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var greatings: UILabel!
+    
+    var url = URL(string: "")
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
+        keyboardDismis()
+        if !(url?.path.isEmpty)! {
+            avatarImage.kf.setImage(with: url)
+            greatings.text = "Hello \(name)"
+        }
     }
     
     @IBAction func startSearch(_ sender: Any) {
@@ -42,7 +50,7 @@ class SearchGitHubViewController: UIViewController {
     
     private func configurPlaceholderForImageView() {
         avatarImage.image = #imageLiteral(resourceName: "avatar-placeholder")
-        avatarImage.layer.cornerRadius = (view.frame.width * 0.3) / 2
+        avatarImage.layer.cornerRadius = (view.frame.width * 0.3) / 2.2
     }
     
     func searchRepositoriesRequest(_ name: String, _ language: String, _ order: String) -> URLRequest? {
@@ -80,7 +88,8 @@ class SearchGitHubViewController: UIViewController {
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+        self.startWaiting()
+        NetworkManager.task(url: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -90,13 +99,24 @@ class SearchGitHubViewController: UIViewController {
                 print("no data received")
                 return
             }
-            
-            guard let text = String(data: data, encoding: .utf8) else {
-                print("data encoding failed")
-                return
+
+            let decoder = JSONDecoder()
+            do {
+                let model = try decoder.decode(JsonModel.self, from: data)
+                DispatchQueue.main.async {
+                    self.stopWaiting()
+                    let pushView = ResultTableViewController()
+                    pushView.model = model
+                    self.navigationController?.pushViewController(pushView, animated: true)
+                }
+            } catch let error {
+                self.stopWaiting()
+                print(error.localizedDescription)
             }
-            print("received data: \(text)")
         }
-        dataTask.resume()
     }
+    private func keyboardDismis() {
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+                   view.addGestureRecognizer(tap)
+        }
 }
