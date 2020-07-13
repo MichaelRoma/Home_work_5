@@ -18,6 +18,7 @@ class SearchGitHubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
+        keyboardDismis()
     }
     
     @IBAction func startSearch(_ sender: Any) {
@@ -79,13 +80,8 @@ class SearchGitHubViewController: UIViewController {
             print("Url error")
             return
         }
-        
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
+        self.startWaiting()
+        NetworkManagerImp.task(url: urlRequest) { (data, _, _) in
             guard let data = data else {
                 print("no data received")
                 return
@@ -96,7 +92,19 @@ class SearchGitHubViewController: UIViewController {
                 return
             }
             print("received data: \(text)")
+            
+            //TODO: Это алерт нужен только для этого ДЗ, поэтому размещу его тут. В следующих заданиях надо будет удалить за ненадобностью
+            DispatchQueue.main.async {
+                self.stopWaiting()
+                let alert = UIAlertController(title: "Attension", message: "Check consol!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                
+            }
         }
-        dataTask.resume()
+    }
+    private func keyboardDismis() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 }
