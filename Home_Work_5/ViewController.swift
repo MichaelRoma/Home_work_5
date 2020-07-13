@@ -16,15 +16,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageAvatar.kf.setImage(with: url)
-        keyboardDismis()
+        keyboardDismiss()
     }
     @IBAction func pressLogin(_ sender: Any) {
         navigationController?.pushViewController(SearchGitHubViewController(), animated: true)
     }
     
-    private func keyboardDismis() {
+    private func keyboardDismiss() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-               view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
 }
 

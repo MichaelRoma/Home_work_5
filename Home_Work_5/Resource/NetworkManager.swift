@@ -7,7 +7,11 @@
 //
 import UIKit
 
-class NetworkManager {
+protocol NetworkManager {
+    static func task(url: URLRequest, completion: @escaping ((Data?, URLResponse?, Error?) -> Void))
+}
+
+class NetworkManagerImp: NetworkManager {
     
     class func task(url: URLRequest, completion: @escaping ((Data?, URLResponse?, Error?) -> Void)) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()

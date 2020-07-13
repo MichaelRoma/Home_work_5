@@ -12,14 +12,15 @@ fileprivate var aView: UIView?
 extension UIViewController {
     func startWaiting() {
         aView = UIView(frame: self.view.bounds)
-        aView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        guard let aView = aView else { return }
+        aView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         
         let activeIndicator = UIActivityIndicatorView(style: .medium)
-        activeIndicator.center = aView!.center
+        activeIndicator.center = aView.center
         activeIndicator.startAnimating()
         
-        aView?.addSubview(activeIndicator)
-        self.view.addSubview(aView!)
+        aView.addSubview(activeIndicator)
+        view.addSubview(aView)
     }
     
     func stopWaiting() {

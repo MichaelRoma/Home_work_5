@@ -81,7 +81,7 @@ class SearchGitHubViewController: UIViewController {
             return
         }
         self.startWaiting()
-        NetworkManager.task(url: urlRequest) { (data, _, _) in
+        NetworkManagerImp.task(url: urlRequest) { (data, _, _) in
             guard let data = data else {
                 print("no data received")
                 return
@@ -93,7 +93,7 @@ class SearchGitHubViewController: UIViewController {
             }
             print("received data: \(text)")
             
-            //Это алерт нужен только для этого ДЗ, поэтому размещу его тут
+            //TODO: Это алерт нужен только для этого ДЗ, поэтому размещу его тут. В следующих заданиях надо будет удалить за ненадобностью
             DispatchQueue.main.async {
                 self.stopWaiting()
                 let alert = UIAlertController(title: "Attension", message: "Check consol!", preferredStyle: .alert)
