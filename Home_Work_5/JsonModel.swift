@@ -14,8 +14,10 @@ struct JsonModel: Decodable {
         let description: String
         let owner: Owner
     }
+    
     struct Owner: Decodable {
         let login: String
         let avatar_url: String
     }
+    
 }

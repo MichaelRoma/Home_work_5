@@ -81,7 +81,7 @@ class SearchGitHubViewController: UIViewController {
         }
         
         self.startWaiting()
-        NetworkManager.task(url: urlRequest) { (data, _, error) in
+        NetworkManagerImp.task(url: urlRequest) { (data, _, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
