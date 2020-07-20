@@ -57,9 +57,7 @@ class ViewController: UIViewController {
             do {
                 let model = try decoder.decode(JsonModel.Owner.self
                     , from: data)
-                print(model)
                 guard let url = URL(string: model.avatar_url) else { return }
-                print(url)
                 DispatchQueue.main.async {
                     let pushView = SearchGitHubViewController()
                     pushView.url = url
@@ -78,8 +76,8 @@ class ViewController: UIViewController {
         }.resume()
     }
     private func keyboardDismis() {
-            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-                   view.addGestureRecognizer(tap)
-        }
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }
 

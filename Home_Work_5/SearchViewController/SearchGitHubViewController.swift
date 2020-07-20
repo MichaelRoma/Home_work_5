@@ -99,7 +99,7 @@ class SearchGitHubViewController: UIViewController {
                 print("no data received")
                 return
             }
-
+            
             let decoder = JSONDecoder()
             do {
                 let model = try decoder.decode(JsonModel.self, from: data)
@@ -116,7 +116,7 @@ class SearchGitHubViewController: UIViewController {
         }
     }
     private func keyboardDismis() {
-            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-                   view.addGestureRecognizer(tap)
-        }
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }
