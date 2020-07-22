@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Cell: UITableViewCell {
+class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var repositoriesName: UILabel!
     @IBOutlet weak var cellDescription: UILabel!
@@ -17,7 +17,7 @@ class Cell: UITableViewCell {
     
 }
 
-extension Cell {
+extension SearchTableViewCell {
     func cellConfigurator(with repoInfo: JsonModel.Items ) {
         repositoriesName.text = repoInfo.name
         cellDescription.text = repoInfo.description

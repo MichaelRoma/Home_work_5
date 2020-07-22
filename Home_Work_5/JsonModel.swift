@@ -5,6 +5,7 @@
 //  Created by Mykhailo Romanovskyi on 28.06.2020.
 //  Copyright © 2020 Mykhailo Romanovskyi. All rights reserved.
 //
+/// Модель для получения JSON данных с ГитХаба
 struct JsonModel: Decodable {
     let total_count: Int
     let items: [Items]

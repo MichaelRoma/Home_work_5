@@ -13,4 +13,24 @@ class NetworkManager {
     class func task(url: URLRequest, completion: @escaping ((Data?, URLResponse?, Error?) -> Void)) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
+    
+    class func getData(url: URLRequest, completion: @escaping ((Result<JsonModel, Error>)
+        ->Void)) {
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(JsonModel.self, from: data)
+                    completion(.success(model))
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            }
+        }.resume()
+    }
 }

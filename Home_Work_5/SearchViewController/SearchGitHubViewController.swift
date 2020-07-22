@@ -22,7 +22,7 @@ class SearchGitHubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurPlaceholderForImageView()
-        keyboardDismis()
+        keyboardDismiss()
         if !(url?.path.isEmpty)! {
             avatarImage.kf.setImage(with: url)
             greatings.text = "Hello \(name)"
@@ -90,34 +90,54 @@ class SearchGitHubViewController: UIViewController {
         }
         
         self.startWaiting()
-        NetworkManager.task(url: urlRequest) { (data, _, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let data = data else {
-                print("no data received")
-                return
-            }
-
-            let decoder = JSONDecoder()
-            do {
-                let model = try decoder.decode(JsonModel.self, from: data)
+        NetworkManager.getData(url: urlRequest) { [weak self] result in
+            switch result {
+            case .success(let model):
+                print("SUCCESS")
                 DispatchQueue.main.async {
-                    self.stopWaiting()
+                    self?.stopWaiting()
                     let pushView = ResultTableViewController()
                     pushView.model = model
-                    self.navigationController?.pushViewController(pushView, animated: true)
+                    self?.navigationController?.pushViewController(pushView, animated: true)
+                    
                 }
-            } catch let error {
-                self.stopWaiting()
-                print(error.localizedDescription)
+                
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    print(error.localizedDescription)
+                    self?.stopWaiting()
+                }
+                
             }
         }
+        //        NetworkManager.task(url: urlRequest) { (data, _, error) in
+        //            if let error = error {
+        //                print(error.localizedDescription)
+        //                return
+        //            }
+        //
+        //            guard let data = data else {
+        //                print("no data received")
+        //                return
+        //            }
+        //
+        //            let decoder = JSONDecoder()
+        //            do {
+        //                let model = try decoder.decode(JsonModel.self, from: data)
+        //                DispatchQueue.main.async {
+        //                    self.stopWaiting()
+        //                    let pushView = ResultTableViewController()
+        //                    pushView.model = model
+        //                    self.navigationController?.pushViewController(pushView, animated: true)
+        //                }
+        //            } catch let error {
+        //                self.stopWaiting()
+        //                print(error.localizedDescription)
+        //            }
+        //        }
     }
-    private func keyboardDismis() {
-               let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-                      view.addGestureRecognizer(tap)
-           }
+    private func keyboardDismiss() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }

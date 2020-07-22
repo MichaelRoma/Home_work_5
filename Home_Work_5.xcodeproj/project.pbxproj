@@ -21,7 +21,7 @@
 		4CFC9BBD24A899FD007C7C10 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BBC24A899FD007C7C10 /* JsonModel.swift */; };
 		4CFC9BD024AB7D43007C7C10 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */; };
 		4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */; };
-		4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD724AC431E007C7C10 /* Cell.swift */; };
+		4CFC9BD924AC431E007C7C10 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD724AC431E007C7C10 /* SearchTableViewCell.swift */; };
 		4CFC9BDA24AC431E007C7C10 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC9BD824AC431E007C7C10 /* Cell.xib */; };
 		4CFC9BDC24AC8743007C7C10 /* LoadViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */; };
 		E7ABA82D2A2522F3040E6297 /* Pods_Home_Work_5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6D55DF2659456FEBA6628D /* Pods_Home_Work_5.framework */; };
@@ -44,7 +44,7 @@
 		4CFC9BBC24A899FD007C7C10 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
 		4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
-		4CFC9BD724AC431E007C7C10 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		4CFC9BD724AC431E007C7C10 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		4CFC9BD824AC431E007C7C10 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		4CFC9BDB24AC8743007C7C10 /* LoadViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewExtension.swift; sourceTree = "<group>"; };
 		505DA74A4CDA0E90D74599CB /* Pods-Home_Work_5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home_Work_5.release.xcconfig"; path = "Target Support Files/Pods-Home_Work_5/Pods-Home_Work_5.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			children = (
 				4CFC9BCF24AB7D43007C7C10 /* ResultViewController.swift */,
 				4CFC9BD524AC42EF007C7C10 /* ResultTableViewController.swift */,
-				4CFC9BD724AC431E007C7C10 /* Cell.swift */,
+				4CFC9BD724AC431E007C7C10 /* SearchTableViewCell.swift */,
 				4CFC9BD824AC431E007C7C10 /* Cell.xib */,
 			);
 			path = ResultViewController;
@@ -289,7 +289,7 @@
 				4CFC9BA124A75CAC007C7C10 /* SceneDelegate.swift in Sources */,
 				4C22260824B2F7D500302E1D /* Keychain.swift in Sources */,
 				4CFC9BD624AC42EF007C7C10 /* ResultTableViewController.swift in Sources */,
-				4CFC9BD924AC431E007C7C10 /* Cell.swift in Sources */,
+				4CFC9BD924AC431E007C7C10 /* SearchTableViewCell.swift in Sources */,
 				4CEDF5F524AE44150039FF60 /* WebView.swift in Sources */,
 				4CFC9BB624A76E82007C7C10 /* SearchGitHubViewController.swift in Sources */,
 				4CFC9BD024AB7D43007C7C10 /* ResultViewController.swift in Sources */,

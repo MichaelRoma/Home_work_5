@@ -61,7 +61,6 @@ class ViewController: UIViewController {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("http status code: \(httpResponse.statusCode)")
                 if httpResponse.statusCode == 200 {
                     //Так как всегда должен быть только один пользователь и если нажать отмена биометрической аунтификации. ТО можно будет ввести данные нового пользователя, соответственно данные старого необходимо удалить.
                     _ = self.keyChain.deletePassword()
@@ -76,9 +75,7 @@ class ViewController: UIViewController {
             let decoder = JSONDecoder()
             do {
                 let model = try decoder.decode(JsonModel.Owner.self, from: data)
-                print(model)
                 guard let url = URL(string: model.avatar_url) else { return }
-                print(url)
                 DispatchQueue.main.async {
                     let pushView = SearchGitHubViewController()
                     pushView.url = url
@@ -98,9 +95,9 @@ class ViewController: UIViewController {
         }.resume()
     }
     private func keyboardDismis() {
-            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-                   view.addGestureRecognizer(tap)
-        }
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }
 
 // MARK: User authenticate
